@@ -16,7 +16,7 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
   ],
   imports: [
     BrowserModule
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
