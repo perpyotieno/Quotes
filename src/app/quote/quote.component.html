@@ -1,3 +1,6 @@
 <h1>Techy Quotes</h1>
 
-<p *ngFor="let quote of quotes">{{quote.theQuote}}</p>
+<div *ngFor="let quote of quotes;let i = index">
+  <p>{{quote.theQuote}}</p>
+  <app-quote-author [quote]="quote" (isComplete)="completeQuote($event,i)"></app-quote-author>
+</div>

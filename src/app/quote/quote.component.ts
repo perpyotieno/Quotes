@@ -8,12 +8,21 @@ import {Quote} from "../quote"
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote(1,"Any fool can write code that a computer can understand. Good programmers write code that humans can understand"),
-    new Quote(2,"Computers are good at following instructions,but not at reading your mind"),
-    new Quote(3,"Programming: when the ideas turn into the real things"),
-    new Quote(4,"No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. "),
-    new Quote(5,"Talk is cheap. Show me the code."),
+    new Quote(1,"Any fool can write code that a computer can understand. Good programmers write code that humans can understand","Martin Fowler"),
+    new Quote(2,"Computers are good at following instructions,but not at reading your mind", "Donald Knuth"),
+    new Quote(3,"Programming: when the ideas turn into the real things", "Maciej Kaczmarek"),
+    new Quote(4,"No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt"),
+    new Quote(5,"Talk is cheap. Show me the code.", "Linus Torvalds"),
   ]
+
+  completeQuote(isComplete,index){
+    if(isComplete){
+      let toDelete=confirm(`Are you sure you want to delete this techy quote by ${this.quotes[index].quoteauthor}?`)
+      if(toDelete){
+      this.quotes.splice(index,1)
+      }
+    }
+  }
 
   constructor() { }
 
