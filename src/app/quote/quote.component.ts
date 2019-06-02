@@ -14,6 +14,11 @@ export class QuoteComponent implements OnInit {
     new Quote(4,"No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt"),
     new Quote(5,"Talk is cheap. Show me the code.", "Linus Torvalds"),
   ]
+  addNewQuote(quote){
+    let quoteLength = this.quotes.length;
+    quote.id=quoteLength+1;
+    this.quotes.push(quote)
+  }
 
   completeQuote(isComplete,index){
     if(isComplete){
