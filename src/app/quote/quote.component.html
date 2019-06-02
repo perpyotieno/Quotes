@@ -1,6 +1,11 @@
 <h1>Techy Quotes</h1>
 <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 <div *ngFor="let quote of quotes;let i = index">
-  <p>{{quote.theQuote}}</p>
+  <p>{{quote.theQuote}} submitted on {{quote.postedDate|date}}</p>
+
   <app-quote-author [quote]="quote" (isComplete)="completeQuote($event,i)"></app-quote-author>
 </div>
+
+<!-- <p appHighlight *ngIf="hUpvote()===quote.upVotes && quote.upVotes>0"><strong>Quote:</strong>{{quote.theQuote}}</p>
+
+<p><strong>Written</strong> {{quote.postedDate|timeAgo}} <strong> By:</strong>{{quote.theQuote}}</p> -->

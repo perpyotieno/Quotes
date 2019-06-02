@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import {Quote} from "../quote"
 
 @Component({
@@ -8,11 +8,11 @@ import {Quote} from "../quote"
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote(1,"Any fool can write code that a computer can understand. Good programmers write code that humans can understand","Martin Fowler"),
-    new Quote(2,"Computers are good at following instructions,but not at reading your mind", "Donald Knuth"),
-    new Quote(3,"Programming: when the ideas turn into the real things", "Maciej Kaczmarek"),
-    new Quote(4,"No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt"),
-    new Quote(5,"Talk is cheap. Show me the code.", "Linus Torvalds"),
+    new Quote(1,"Any fool can write code that a computer can understand. Good programmers write code that humans can understand","Martin Fowler",new Date(2017,2,12)),
+    new Quote(2,"Computers are good at following instructions,but not at reading your mind", "Donald Knuth",new Date(2019,2,4)),
+    new Quote(3,"Programming: when the ideas turn into the real things", "Maciej Kaczmarek",new Date(2019,3,5)),
+    new Quote(4,"No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt",new Date(2018,2,4)),
+    new Quote(5,"Talk is cheap. Show me the code.", "Linus Torvalds",new Date(2019,2,4)),
   ]
   addNewQuote(quote){
     let quoteLength = this.quotes.length;
@@ -28,7 +28,18 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
-
+ upVotes=0;
+ downVotes=0;
+ timePass=0;
+ upvote(i){
+   this.quotes[i].upVotes +=1;
+ }
+ downvote(i){
+   this.quotes[i].downVotes +=1;
+ }
+ timepassed(){
+   this.timePass =0;
+ }
   constructor() { }
 
   ngOnInit() {
