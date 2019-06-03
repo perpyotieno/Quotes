@@ -1,0 +1,13 @@
+.container{
+  text-align: center !important;
+
+}
+form{
+display: inline-block;
+background-position: relative;
+  width: 50% !important;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  background-color: rgba(66, 178, 41, 0.5);
+  padding: 10px;
+}

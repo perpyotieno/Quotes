@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
-import {Quote} from "../quote"
+import {Quote} from "../quote";
+import{DatePipe} from "node_modules/@angular/common"
 
 @Component({
   selector: 'app-quote',
@@ -7,16 +8,23 @@ import {Quote} from "../quote"
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+
+  // @Input() quote:Quote;
+  //
+  //   @Output() isComplete= new EventEmitter<boolean>();
+
   quotes = [
-    new Quote(1,"Perpetua Mary","Any fool can write code that a computer can understand. Good programmers write code that humans can understand","Martin Fowler",new Date(2017,2,12)),
-    new Quote(2,"Perpetua Mary","Computers are good at following instructions,but not at reading your mind", "Donald Knuth",new Date(2019,2,4)),
-    new Quote(3,"Perpetua Mary","Programming: when the ideas turn into the real things", "Maciej Kaczmarek",new Date(2019,3,5)),
-    new Quote(4,"Perpetua Mary","No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt",new Date(2018,2,4)),
-    new Quote(5,"Perpetua Mary","Talk is cheap. Show me the code.", "Linus Torvalds",new Date(2019,2,4)),
+    new Quote(1,"Perpetua Mary","Any fool can write code that a computer can understand. Good programmers write code that humans can understand","Martin Fowler",new Date(2017,2,12),0,0),
+    new Quote(2,"Perpetua Mary","Computers are good at following instructions,but not at reading your mind", "Donald Knuth",new Date(2019,2,4),0,0),
+    new Quote(3,"Perpetua Mary","Programming: when the ideas turn into the real things", "Maciej Kaczmarek",new Date(2019,3,5)0,0),
+    new Quote(4,"Perpetua Mary","No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt",new Date(2018,2,4)0,0),
+    new Quote(5,"Perpetua Mary","Talk is cheap. Show me the code.", "Linus Torvalds",new Date(2019,2,4)0,0),
   ]
+
   addNewQuote(quote){
     let quoteLength = this.quotes.length;
-    quote.id=quoteLength+1;
+    quote.id = quoteLength+1;
+    quote.postedDate = new Date(quote.postedDate);
     this.quotes.push(quote)
   }
 
@@ -28,18 +36,35 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
- // upVotes=0;
- // downVotes=0;
- // timePass=0;
- // upvote(i){
- //   this.quotes[i].upVotes +=1;
- // }
- // downvote(i){
- //   this.quotes[i].downVotes +=1;
- // }
- // timepassed(){
- //   this.timePass =0;
- // }
+
+ upVotes=0;
+ downVotes=0;
+ timePass=0;
+
+ tPassed(){this.timePass=0;}
+ upVote(i){
+      this.quotes[i].uvotes +=1;
+    }
+    downVote(i){
+         this.quotes[i].dvotes +=1;
+       }
+ startNum:number
+ lastNum:number
+ ctr:number
+
+
+    hUpvote(){
+      this.startNum = 0
+     this.lastNum = 0
+       for(this.ctr=0 ; this.ctr < this.quotes.length; this.ctr++) {
+        this.lastNum = this.quotes[this.ctr].uvotes;
+        if(this.lastNum > this.startNum){
+          this.startNum = this.lastNum
+        }
+      }
+
+      return  this.startNum
+    }
   constructor() { }
 
   ngOnInit() {
