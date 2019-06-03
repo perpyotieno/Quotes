@@ -36,22 +36,22 @@ export class QuoteComponent implements OnInit {
     }
   }
 
- upVotes=0;
- downVotes=0;
- timePass=0;
+ // upVotes=0;
+ // downVotes=0;
+ // timePass=0;
 
- tPassed(){this.timePass=0;}
+ // tPassed(){this.timePass=0;}
  upVote(i){
       this.quotes[i].uvotes +=1;
     }
     downVote(i){
          this.quotes[i].dvotes +=1;
        }
+
+
  initialNum:number
  lastNum:number
  checker:number
-
-
     hUpvote(){
       this.initialNum = 0
      this.lastNum = 0

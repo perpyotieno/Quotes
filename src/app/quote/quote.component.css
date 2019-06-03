@@ -16,14 +16,11 @@ h1{
   font-family: 'Merienda', cursive;
 }
 .container{
-  /* text-align: center; */
   width:80%;
 }
 p{
-  /* font-family: 'Roboto', sans-serif; */
 }
 .try p{
-  /* background-color: red; */
   font-family: 'Roboto Slab', serif;
 }
 .try{
