@@ -9,5 +9,16 @@ background-position: relative;
   margin-bottom: 5%;
   margin-top: 5%;
   background-color: rgba(66, 178, 41, 0.5);
-  padding: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px black;
+  border-radius: 50px;
+}
+form:hover{
+  box-shadow: 0 0 10px white;
+}
+p{
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+label{
+  font-family: 'Roboto Slab', serif;
 }

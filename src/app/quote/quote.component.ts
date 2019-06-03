@@ -16,9 +16,8 @@ export class QuoteComponent implements OnInit {
   quotes = [
     new Quote(1,"Perpetua Mary","Any fool can write code that a computer can understand. Good programmers write code that humans can understand","Martin Fowler",new Date(2017,2,12),0,0),
     new Quote(2,"Perpetua Mary","Computers are good at following instructions,but not at reading your mind", "Donald Knuth",new Date(2019,2,4),0,0),
-    new Quote(3,"Perpetua Mary","Programming: when the ideas turn into the real things", "Maciej Kaczmarek",new Date(2019,3,5)0,0),
-    new Quote(4,"Perpetua Mary","No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first. ", "Andy Hunt",new Date(2018,2,4)0,0),
-    new Quote(5,"Perpetua Mary","Talk is cheap. Show me the code.", "Linus Torvalds",new Date(2019,2,4)0,0),
+    new Quote(3,"Perpetua Mary","Programming: when the ideas turn into the real things", "Maciej Kaczmarek",new Date(2019,3,5),0,0),
+    new Quote(4,"Perpetua Mary","Talk is cheap. Show me the code.", "Linus Torvalds",new Date(2019,2,4),0,0)
   ]
 
   addNewQuote(quote){
@@ -48,22 +47,22 @@ export class QuoteComponent implements OnInit {
     downVote(i){
          this.quotes[i].dvotes +=1;
        }
- startNum:number
+ initialNum:number
  lastNum:number
- ctr:number
+ checker:number
 
 
     hUpvote(){
-      this.startNum = 0
+      this.initialNum = 0
      this.lastNum = 0
-       for(this.ctr=0 ; this.ctr < this.quotes.length; this.ctr++) {
-        this.lastNum = this.quotes[this.ctr].uvotes;
-        if(this.lastNum > this.startNum){
-          this.startNum = this.lastNum
+       for(this.checker=0 ; this.checker < this.quotes.length; this.checker++) {
+        this.lastNum = this.quotes[this.checker].uvotes;
+        if(this.lastNum > this.initialNum){
+          this.initialNum = this.lastNum
         }
       }
 
-      return  this.startNum
+      return  this.initialNum
     }
   constructor() { }
 
