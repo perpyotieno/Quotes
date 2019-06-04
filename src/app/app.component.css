@@ -1,8 +1,9 @@
 .jumbotron{
-  background-image: url("src/assets/backgroundimage.jpg");
+  /* background-image: url("src/assets/backgroundimage5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background-color: #0C1D13;
 
   /* height:100vh; */
 }
