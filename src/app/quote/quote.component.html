@@ -12,9 +12,9 @@
    -->
 
         <app-quote-author [quote]="quote" (isComplete)="completeQuote($event,i)"></app-quote-author>
-        <button (click)='upVote(i)'>like</button>
-        <button (click)='downVote(i)'>unlike</button>
-        <p><strong>upVotes:</strong>{{quote.uvotes}} <strong>downVotes:</strong> {{quote.dvotes}}</p>
+        <button (click)='positive(i)'>like</button>
+        <button (click)='negative(i)'>unlike</button>
+        <p><strong>upVotes:</strong>{{quote.upvotes}} <strong>downVotes:</strong> {{quote.downvotes}}</p>
       </div>
 
 

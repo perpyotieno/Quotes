@@ -41,29 +41,29 @@ export class QuoteComponent implements OnInit {
  // timePass=0;
 
  // tPassed(){this.timePass=0;}
- upVote(i){
-      this.quotes[i].uvotes +=1;
+ positive(i){
+      this.quotes[i].upvotes +=1;
     }
-    downVote(i){
-         this.quotes[i].dvotes +=1;
+    negative(i){
+         this.quotes[i].downvotes +=1;
        }
 
 
- initialNum:number
- lastNum:number
- checker:number
-    hUpvote(){
-      this.initialNum = 0
-     this.lastNum = 0
-       for(this.checker=0 ; this.checker < this.quotes.length; this.checker++) {
-        this.lastNum = this.quotes[this.checker].uvotes;
-        if(this.lastNum > this.initialNum){
-          this.initialNum = this.lastNum
-        }
-      }
-
-      return  this.initialNum
-    }
+ // initialNum:number
+ // lastNum:number
+ // checker:number
+ //    hUpvote(){
+ //      this.initialNum = 0
+ //     this.lastNum = 0
+ //       for(this.checker=0 ; this.checker < this.quotes.length; this.checker++) {
+ //        this.lastNum = this.quotes[this.checker].uvotes;
+ //        if(this.lastNum > this.initialNum){
+ //          this.initialNum = this.lastNum
+ //        }
+ //      }
+ //
+ //      return  this.initialNum
+ //    }
   constructor() { }
 
   ngOnInit() {

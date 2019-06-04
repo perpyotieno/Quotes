@@ -54,7 +54,7 @@ To view the website, click or copy (https://perpyotieno.github.io/Quotes/) to yo
 
 ## Behavior Driven Development
 | Inputs  | Outputs  |  User Behavior |
-|---|---|---|---|---|
+|:---------|:----------:|----------------:|
 |  Enter Data in text box |  Data validation occurs | User inputs details in the various fields  |
 |  Submit button | Sends user input to display area  | User views input  |
 |  Vote button |   Displays the vote count| User feeling about various quotes  |
